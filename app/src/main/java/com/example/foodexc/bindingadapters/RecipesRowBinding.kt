@@ -1,22 +1,31 @@
 package com.example.foodexc.bindingadapters
 
-import android.content.Context
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
+import coil.load
 import com.example.foodexc.R
-import org.w3c.dom.Text
 
 class RecipesRowBinding {
 
     companion object {
 
+        // Coil image library to load the image url
+        // Added a fade animation of 600ms
+        @BindingAdapter("loadImageFromUrl")
+        @JvmStatic
+        fun loadImageFromUrl(imageView: ImageView, imageUrl: String){
+            imageView.load(imageUrl){
+                crossfade(600)
+            }
+        }
+
         // Used so we can call setNumberOfLikes on the xml layout so we can convert the likes result
         // from an INT that the API sends us to a String
-        @BindingAdapter("setNumberOfLikes")
         // Make it static so we can access it elsewhere
+        @BindingAdapter("setNumberOfLikes")
         @JvmStatic
         fun setNumberOfLikes(textView: TextView, likes: Int){
             textView.text = likes.toString()
