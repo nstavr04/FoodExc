@@ -70,18 +70,18 @@ class RecipesFragment : Fragment() {
         )
     }
 
-    private fun applyQueries(): HashMap<String, String>{
-        val queries: HashMap<String, String> = HashMap()
-
-        queries["number"] = "6"
-        queries["apiKey"] = API_KEY
-        queries["type"] = "snack"
-        queries["diet"] = "vegan"
-        queries["addRecipeInformation"] = "true"
-        queries["FillIngredients"] = "true"
-
-        return queries
-    }
+//    private fun applyQueries(): HashMap<String, String>{
+//        val queries: HashMap<String, String> = HashMap()
+//
+//        queries["number"] = "6"
+//        queries["apiKey"] = API_KEY
+//        queries["type"] = "snack"
+//        queries["cheap"] = "true"
+//        queries["addRecipeInformation"] = "true"
+//        queries["FillIngredients"] = "true"
+//
+//        return queries
+//    }
 
     private fun setupRecyclerView(){
         mView.shimmer_recycler_view.adapter = mAdapter
