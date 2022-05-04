@@ -7,6 +7,8 @@ import javax.inject.Inject
 
 // Request data from our api
 // https://developer.android.com/training/dependency-injection
+// Constructor Injection. Tell which constructor to use to provide
+// instances and which dependencies the type has.
 class RemoteDataSource @Inject constructor(
     private val foodRecipesApi: FoodRecipesApi
 ) {

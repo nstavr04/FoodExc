@@ -16,7 +16,10 @@ import kotlinx.coroutines.launch
 import retrofit2.Response
 import java.lang.Exception
 
-// Need to check it
+// https://developer.android.com/training/dependency-injection/hilt-cheatsheet
+
+// ViewModelInject: Tells Hilt how to provide instances of an Architecture Component ViewModel
+
 class MainViewModel @ViewModelInject constructor(
     private val repository: Repository,
     application: Application
