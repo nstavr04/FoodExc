@@ -183,7 +183,7 @@
                 android:id="@+id/cuisineType_chipGroup"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                app:checkedChip="@+id/American_chip"
+                app:checkedChip="@+id/Greek_chip"
                 app:selectionRequired="true"
                 app:singleLine="true"
                 app:singleSelection="true">
