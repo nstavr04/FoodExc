@@ -7,9 +7,11 @@ import javax.inject.Inject
 // Only use one instance of this until it is destroyed
 @ActivityRetainedScoped
 class Repository @Inject constructor(
-    remoteDataSource: RemoteDataSource
+    remoteDataSource: RemoteDataSource,
+    localDataSource: LocalDataSource
 ) {
 
     val remote = remoteDataSource
+    val local = localDataSource
 
 }
