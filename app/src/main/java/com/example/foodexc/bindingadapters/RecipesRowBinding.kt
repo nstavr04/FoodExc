@@ -12,6 +12,7 @@ import coil.load
 import com.example.foodexc.R
 import com.example.foodexc.models.Result
 import com.example.foodexc.ui.fragments.recipes.RecipesFragmentDirections
+import org.jsoup.Jsoup
 import java.lang.Exception
 
 class RecipesRowBinding {
@@ -86,6 +87,16 @@ class RecipesRowBinding {
                         )
                     }
                 }
+            }
+        }
+
+        // Parse our html tags with Jsoup
+        @BindingAdapter("parseHtml")
+        @JvmStatic
+        fun parseHtml(textView: TextView, description: String?){
+            if(description != null){
+                val desc = Jsoup.parse(description).text()
+                textView.text = desc
             }
         }
 
