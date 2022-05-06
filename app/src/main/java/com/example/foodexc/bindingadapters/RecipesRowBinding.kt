@@ -1,16 +1,38 @@
 package com.example.foodexc.bindingadapters
 
+import android.util.Log
 import android.view.View
 import android.widget.ImageView
 import android.widget.TextView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat
 import androidx.databinding.BindingAdapter
+import androidx.navigation.findNavController
 import coil.load
 import com.example.foodexc.R
+import com.example.foodexc.models.Result
+import com.example.foodexc.ui.fragments.recipes.RecipesFragmentDirections
+import java.lang.Exception
 
 class RecipesRowBinding {
 
     companion object {
+
+        // Whenever we click on a result from out recipes we will store the result information to the
+        // avtion variable and we will also change to the detailsActivity fragment
+        @BindingAdapter("onRecipeClickListener")
+        @JvmStatic
+        fun onRecipeClickListener(recipeRowLayout: ConstraintLayout, result: Result){
+            recipeRowLayout.setOnClickListener {
+                try{
+                    val action =
+                        RecipesFragmentDirections.actionRecipesFragmentToDetailsActivity(result)
+                    recipeRowLayout.findNavController().navigate(action)
+                } catch (e: Exception){
+                    Log.d("onRecipeClickListener", e.toString())
+                }
+            }
+        }
 
         // Coil image library to load the image url
         // Added a fade animation of 600ms
