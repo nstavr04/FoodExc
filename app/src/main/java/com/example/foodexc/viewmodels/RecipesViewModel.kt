@@ -50,8 +50,8 @@ class RecipesViewModel @ViewModelInject constructor(
         // If we use the API_KEY constants we have error with the API sometimes. Not sure tho
         queries[QUERY_NUMBER] = DEFAULT_RECIPES_NUMBER
         queries[QUERY_API_KEY] = "8f7db6b0bb5c426f8b3e4b2ec09072ec"
-        queries[QUERY_TYPE] = DEFAULT_MEAL_TYPE
-        queries[QUERY_CHEAP] = DEFAULT_CUISINE_TYPE
+        queries[QUERY_TYPE] = mealType
+        queries[QUERY_CHEAP] = cuisineType
         queries[QUERY_ADD_RECIPE_INFORMATION] = "true"
         queries[QUERY_FILL_INGREDIENTS] = "true"
 
