@@ -5,9 +5,9 @@ import com.example.foodexc.models.Result
 
 // Maybe in future we can use AsyncListDiffer so it would run in the background
 
-class RecipesDiffUtil(
-    private val oldList: List<Result>,
-    private val newList: List<Result>
+class RecipesDiffUtil<T>(
+    private val oldList: List<T>,
+    private val newList: List<T>
 ) : DiffUtil.Callback() {
 
 

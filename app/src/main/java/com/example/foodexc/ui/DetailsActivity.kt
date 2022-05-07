@@ -12,6 +12,7 @@ import com.example.foodexc.ui.fragments.instructions.InstructionsFragment
 import com.example.foodexc.ui.fragments.overview.OverviewFragment
 import kotlinx.android.synthetic.main.activity_details.*
 import com.example.foodexc.adapters.PagerAdapter
+import com.example.foodexc.util.Constants.Companion.RECIPE_RESULT_KEY
 
 class DetailsActivity : AppCompatActivity() {
 
@@ -36,7 +37,7 @@ class DetailsActivity : AppCompatActivity() {
         titles.add("Instructions")
 
         val resultBundle = Bundle()
-        resultBundle.putParcelable("recipeBundle", args.result)
+        resultBundle.putParcelable(RECIPE_RESULT_KEY, args.result)
 
         val adapter = PagerAdapter(
             resultBundle,
