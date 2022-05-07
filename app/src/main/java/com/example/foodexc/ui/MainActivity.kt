@@ -18,6 +18,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        // Switching to our app theme after the splash screen
+        setTheme(R.style.AppTheme)
         setContentView(R.layout.activity_main)
 
         navController = findNavController(R.id.navHostFragment)
