@@ -13,6 +13,7 @@ import com.example.foodexc.ui.fragments.overview.OverviewFragment
 import com.example.foodexc.adapters.PagerAdapter
 import com.example.foodexc.databinding.ActivityDetailsBinding
 import com.example.foodexc.util.Constants.Companion.RECIPE_RESULT_KEY
+import com.google.android.material.tabs.TabLayoutMediator
 
 class DetailsActivity : AppCompatActivity() {
 
@@ -42,15 +43,18 @@ class DetailsActivity : AppCompatActivity() {
         val resultBundle = Bundle()
         resultBundle.putParcelable(RECIPE_RESULT_KEY, args.result)
 
-        val adapter = PagerAdapter(
+        val pagerAdapter = PagerAdapter(
             resultBundle,
             fragments,
-            titles,
-            supportFragmentManager
+            this
         )
 
-        binding.viewPager.adapter = adapter
-        binding.tabLayout.setupWithViewPager(binding.viewPager)
+        binding.viewPager2.apply{
+            adapter = pagerAdapter
+        }
+         TabLayoutMediator(binding.tabLayout, binding.viewPager2){ tab, position ->
+             tab.text = titles[position]
+         }.attach()
 
     }
 
