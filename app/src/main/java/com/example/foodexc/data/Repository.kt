@@ -1,11 +1,11 @@
 package com.example.foodexc.data
 
-import dagger.hilt.android.scopes.ActivityRetainedScoped
+import dagger.hilt.android.scopes.ViewModelScoped
 import javax.inject.Inject
 
 // Scope annotation.
 // Only use one instance of this until it is destroyed
-@ActivityRetainedScoped
+@ViewModelScoped
 class Repository @Inject constructor(
     remoteDataSource: RemoteDataSource,
     localDataSource: LocalDataSource

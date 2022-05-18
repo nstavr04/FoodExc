@@ -10,18 +10,21 @@ import com.example.foodexc.data.Repository
 import com.example.foodexc.data.database.RecipesEntity
 import com.example.foodexc.models.FoodRecipe
 import com.example.foodexc.util.NetworkResult
+import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.Dispatchers.IO
 import kotlinx.coroutines.launch
 import okhttp3.Dispatcher
 import retrofit2.Response
 import java.lang.Exception
+import javax.inject.Inject
 
 // https://developer.android.com/training/dependency-injection/hilt-cheatsheet
 
 // ViewModelInject: Tells Hilt how to provide instances of an Architecture Component ViewModel
 
-class MainViewModel @ViewModelInject constructor(
+@HiltViewModel
+class MainViewModel @Inject constructor(
     private val repository: Repository,
     application: Application
     ) : AndroidViewModel(application) {
