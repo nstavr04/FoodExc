@@ -2,6 +2,7 @@ package com.example.foodexc.ui
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.navigation.NavController
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -16,14 +17,17 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityMainBinding
 
-
     private lateinit var navController: NavController
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        Thread.sleep(2000)
+        installSplashScreen()
+
         binding = ActivityMainBinding.inflate(layoutInflater)
+
         // Switching to our app theme after the splash screen
-        setTheme(R.style.AppTheme)
+        //setTheme(R.style.AppTheme)
         setContentView(binding.root)
 
         navController = findNavController(R.id.navHostFragment)

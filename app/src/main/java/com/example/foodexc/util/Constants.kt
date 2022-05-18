@@ -24,7 +24,7 @@ class Constants {
         const val RECIPES_TABLE = "recipes_table"
 
         // Bottom Sheet and Preferences
-        const val DEFAULT_RECIPES_NUMBER = "2"
+        const val DEFAULT_RECIPES_NUMBER = "5"
         const val DEFAULT_MEAL_TYPE = "main course"
         const val DEFAULT_CUISINE_TYPE = "greek"
 
