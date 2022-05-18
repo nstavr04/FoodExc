@@ -3,16 +3,22 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/Users/chris/AndroidStudioProjects/FoodExc/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1" />
-        <entry key="..\:/Users/chris/AndroidStudioProjects/FoodExc/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1" />
+        <entry key="..\:/Users/apatt/AndroidStudioProjects/FoodExcPrivate/app/src/main/res/layout/activity_details.xml" value="0.16707168894289187" />
+        <entry key="..\:/Users/apatt/AndroidStudioProjects/FoodExcPrivate/app/src/main/res/layout/recipes_bottom_sheet.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/apatt/AndroidStudioProjects/FoodExcPrivate/app/src/main/res/layout/recipes_row_layout.xml" value="0.22826086956521738" />
+        <entry key="..\:/Users/apatt/AndroidStudioProjects/FoodExcPrivate/app/src/main/res/menu/bottom_nav_menu.xml" value="0.1" />
+        <entry key="..\:/Users/chris/AndroidStudioProjects/FoodExc/app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.2365" />
+        <entry key="..\:/Users/chris/AndroidStudioProjects/FoodExc/app/src/main/res/layout/fragment_favourite_recipes.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/chris/AndroidStudioProjects/FoodExc/app/src/main/res/layout/fragment_recipes.xml" value="0.25416666666666665" />
+        <entry key="..\:/Users/chris/AndroidStudioProjects/FoodExc/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.2365" />
+        <entry key="..\:/Users/chris/AndroidStudioProjects/FoodExc/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.2205" />
+        <entry key="..\:/Users/nikol/Desktop/University/6th-Semester/Android-Programming/FoodExc/app/src/main/res/drawable/dradient_overlay.xml" value="0.3675" />
+        <entry key="..\:/Users/nikol/Desktop/University/6th-Semester/Android-Programming/FoodExc/app/src/main/res/drawable/ic_checkmark.xml" value="0.3675" />
+        <entry key="..\:/Users/nikol/Desktop/University/6th-Semester/Android-Programming/FoodExc/app/src/main/res/drawable/ic_error_placeholder.xml" value="0.1" />
         <entry key="..\:/Users/nikol/Desktop/University/6th-Semester/Android-Programming/FoodExc/app/src/main/res/drawable/ic_menu_favorite.xml" value="0.2875" />
         <entry key="..\:/Users/nikol/Desktop/University/6th-Semester/Android-Programming/FoodExc/app/src/main/res/drawable/ic_menu_joke.xml" value="0.2875" />
         <entry key="..\:/Users/nikol/Desktop/University/6th-Semester/Android-Programming/FoodExc/app/src/main/res/drawable/ic_menu_recipes.xml" value="0.2875" />
         <entry key="..\:/Users/nikol/Desktop/University/6th-Semester/Android-Programming/FoodExc/app/src/main/res/drawable/ic_nointernet_recipe.xml" value="0.2895" />
-        <entry key="..\:/Users/nikol/Desktop/University/6th-Semester/Android-Programming/FoodExc/app/src/main/res/drawable/ic_time_recipe_row.xml" value="0.365" />
-        <entry key="..\:/Users/nikol/Desktop/University/6th-Semester/Android-Programming/FoodExc/app/src/main/res/font/bad_script.xml" value="0.396875" />
-        <entry key="..\:/Users/nikol/Desktop/University/6th-Semester/Android-Programming/FoodExc/app/src/main/res/font/fresca.xml" value="0.396875" />
-        <entry key="..\:/Users/nikol/Desktop/University/6th-Semester/Android-Programming/FoodExc/app/src/main/res/font/piedra.xml" value="0.396875" />
         <entry key="..\:/Users/nikol/Desktop/University/6th-Semester/Android-Programming/FoodExc/app/src/main/res/layout/activity_details.xml" value="0.36666666666666664" />
         <entry key="..\:/Users/nikol/Desktop/University/6th-Semester/Android-Programming/FoodExc/app/src/main/res/layout/activity_main.xml" value="0.22" />
         <entry key="..\:/Users/nikol/Desktop/University/6th-Semester/Android-Programming/FoodExc/app/src/main/res/layout/fragment_favourite_recipes.xml" value="0.2833333333333333" />
@@ -26,9 +32,6 @@
         <entry key="..\:/Users/nikol/Desktop/University/6th-Semester/Android-Programming/FoodExc/app/src/main/res/layout/recipes_bottom_sheet.xml" value="0.18532818532818532" />
         <entry key="..\:/Users/nikol/Desktop/University/6th-Semester/Android-Programming/FoodExc/app/src/main/res/layout/recipes_row_layout.xml" value="0.67" />
         <entry key="..\:/Users/nikol/Desktop/University/6th-Semester/Android-Programming/FoodExc/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2833333333333333" />
-        <entry key="..\:/Users/nikol/Desktop/University/6th-Semester/Android-Programming/FoodExc/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1085" />
-        <entry key="..\:/Users/nikol/Desktop/University/6th-Semester/Android-Programming/FoodExc/app/src/main/res/mipmap-anydpi-v26/ic_launcher_round.xml" value="0.1085" />
-        <entry key="..\:/Users/nikol/Desktop/University/6th-Semester/Android-Programming/FoodExc/app/src/main/res/mipmap-anydpi-v26/ic_launcher_updated_round.xml" value="0.196" />
       </map>
     </option>
   </component>
