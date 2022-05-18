@@ -3,8 +3,8 @@ package com.example.foodexc.models
 
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
-import kotlinx.android.parcel.Parcelize
-import kotlinx.android.parcel.RawValue
+import kotlinx.parcelize.Parcelize
+import kotlinx.parcelize.RawValue
 
 // We use parcelize to be able to use the result at the navigation xml as an args to the detailsActivity fragment
 @Parcelize

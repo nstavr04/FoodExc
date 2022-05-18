@@ -7,38 +7,36 @@ import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
 import com.example.foodexc.R
+import com.example.foodexc.databinding.IngredientsRowLayoutBinding
 import com.example.foodexc.models.ExtendedIngredient
 import com.example.foodexc.util.Constants.Companion.BASE_IMAGE_URL
 import com.example.foodexc.util.RecipesDiffUtil
-import kotlinx.android.synthetic.main.ingredients_row_layout.view.*
 
 class IngredientsAdapter : RecyclerView.Adapter<IngredientsAdapter.MyViewHolder>() {
 
     private var ingredientsList = emptyList<ExtendedIngredient>()
 
-    class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
+    class MyViewHolder(val binding: IngredientsRowLayoutBinding) : RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
     ): IngredientsAdapter.MyViewHolder {
         return MyViewHolder(
-            LayoutInflater.from(parent.context)
-                .inflate(R.layout.ingredients_row_layout, parent, false)
-        )
+            IngredientsRowLayoutBinding.inflate(LayoutInflater.from(parent.context),parent, false))
     }
 
     // We concatenate to the url the corresponding ingredient image name
     override fun onBindViewHolder(holder: IngredientsAdapter.MyViewHolder, position: Int) {
-        holder.itemView.ingredient_imageView.load(BASE_IMAGE_URL + ingredientsList[position].image){
+        holder.binding.ingredientImageView.load(BASE_IMAGE_URL + ingredientsList[position].image){
             crossfade(600)
             error(R.drawable.ic_error_placeholder)
         }
-        holder.itemView.ingredient_name.text = ingredientsList[position].name?.capitalize()
-        holder.itemView.ingredient_amount.text = ingredientsList[position].amount.toString()
-        holder.itemView.ingredient_unit.text = ingredientsList[position].unit
-        holder.itemView.ingredient_consistency.text = ingredientsList[position].consistency
-        holder.itemView.ingredient_original.text = ingredientsList[position].original
+        holder.binding.ingredientName.text = ingredientsList[position].name?.capitalize()
+        holder.binding.ingredientAmount.text = ingredientsList[position].amount.toString()
+        holder.binding.ingredientUnit.text = ingredientsList[position].unit
+        holder.binding.ingredientConsistency.text = ingredientsList[position].consistency
+        holder.binding.ingredientOriginal.text = ingredientsList[position].original
     }
 
     override fun getItemCount(): Int {

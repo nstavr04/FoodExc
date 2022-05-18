@@ -10,20 +10,23 @@ import com.example.foodexc.R
 import com.example.foodexc.ui.fragments.ingredients.IngredientsFragment
 import com.example.foodexc.ui.fragments.instructions.InstructionsFragment
 import com.example.foodexc.ui.fragments.overview.OverviewFragment
-import kotlinx.android.synthetic.main.activity_details.*
 import com.example.foodexc.adapters.PagerAdapter
+import com.example.foodexc.databinding.ActivityDetailsBinding
 import com.example.foodexc.util.Constants.Companion.RECIPE_RESULT_KEY
 
 class DetailsActivity : AppCompatActivity() {
+
+    private lateinit var binding: ActivityDetailsBinding
 
     private val args by navArgs<DetailsActivityArgs>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_details)
+        binding = ActivityDetailsBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
-        setSupportActionBar(toolbar)
-        toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.white))
+        setSupportActionBar(binding.toolbar)
+        binding.toolbar.setTitleTextColor(ContextCompat.getColor(this, R.color.white))
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val fragments = ArrayList<Fragment>()
@@ -46,8 +49,8 @@ class DetailsActivity : AppCompatActivity() {
             supportFragmentManager
         )
 
-        viewPager.adapter = adapter
-        tabLayout.setupWithViewPager(viewPager)
+        binding.viewPager.adapter = adapter
+        binding.tabLayout.setupWithViewPager(binding.viewPager)
 
     }
 
