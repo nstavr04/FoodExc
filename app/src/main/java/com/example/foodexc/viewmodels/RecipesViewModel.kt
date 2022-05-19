@@ -1,7 +1,6 @@
 package com.example.foodexc.viewmodels
 
 import android.app.Application
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.foodexc.data.DataStoreRepository

@@ -4,7 +4,6 @@ import android.app.Application
 import android.content.Context
 import android.net.ConnectivityManager
 import android.net.NetworkCapabilities
-import androidx.hilt.lifecycle.ViewModelInject
 import androidx.lifecycle.*
 import com.example.foodexc.data.Repository
 import com.example.foodexc.data.database.RecipesEntity
@@ -22,7 +21,6 @@ import javax.inject.Inject
 // https://developer.android.com/training/dependency-injection/hilt-cheatsheet
 
 // ViewModelInject: Tells Hilt how to provide instances of an Architecture Component ViewModel
-
 @HiltViewModel
 class MainViewModel @Inject constructor(
     private val repository: Repository,
