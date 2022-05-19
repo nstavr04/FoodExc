@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
+
         <variable
             name="mainViewModel"
             type="com.example.foodexc.viewmodels.MainViewModel" />
@@ -22,7 +23,7 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" >
+            app:layout_constraintTop_toTopOf="parent">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -57,9 +58,9 @@
             android:layout_marginEnd="24dp"
             android:layout_marginBottom="24dp"
             android:clickable="true"
-            app:backgroundTint="@color/colorPrimary"
             android:focusable="true"
             android:src="@drawable/ic_filter_recipe_updated"
+            app:backgroundTint="@color/colorPrimary"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             tools:ignore="SpeakableTextPresentCheck" />
@@ -67,10 +68,10 @@
         <!-- alpha -> opacity level -->
         <ImageView
             android:id="@+id/comingSoon_imageView"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
             readApiResponse="@{mainViewModel.recipesResponse}"
             readDatabase="@{mainViewModel.readRecipes}"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
             android:alpha="0.5"
             android:src="@drawable/ic_nointernet_recipe"
             android:visibility="invisible"
@@ -82,11 +83,11 @@
 
         <TextView
             android:id="@+id/error_textView_recipe"
+            readApiResponse="@{mainViewModel.recipesResponse}"
+            readDatabase="@{mainViewModel.readRecipes}"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="10dp"
-            readApiResponse="@{mainViewModel.recipesResponse}"
-            readDatabase="@{mainViewModel.readRecipes}"
             android:alpha="0.5"
             android:textAlignment="center"
             android:textSize="20sp"

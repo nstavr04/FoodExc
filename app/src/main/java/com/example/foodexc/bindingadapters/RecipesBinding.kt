@@ -19,12 +19,12 @@ class RecipesBinding {
             view: View,
             apiResponse: NetworkResult<FoodRecipe>?,
             database: List<RecipesEntity>?
-        ){
-            when(view){
-                is ImageView ->{
+        ) {
+            when (view) {
+                is ImageView -> {
                     view.isVisible = apiResponse is NetworkResult.Error && database.isNullOrEmpty()
                 }
-                is TextView ->{
+                is TextView -> {
                     view.isVisible = apiResponse is NetworkResult.Error && database.isNullOrEmpty()
                     view.text = apiResponse?.message.toString()
                 }

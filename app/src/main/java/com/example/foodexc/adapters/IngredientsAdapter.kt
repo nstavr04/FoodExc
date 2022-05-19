@@ -16,19 +16,21 @@ class IngredientsAdapter : RecyclerView.Adapter<IngredientsAdapter.MyViewHolder>
 
     private var ingredientsList = emptyList<ExtendedIngredient>()
 
-    class MyViewHolder(val binding: IngredientsRowLayoutBinding) : RecyclerView.ViewHolder(binding.root)
+    class MyViewHolder(val binding: IngredientsRowLayoutBinding) :
+        RecyclerView.ViewHolder(binding.root)
 
     override fun onCreateViewHolder(
         parent: ViewGroup,
         viewType: Int
-    ): IngredientsAdapter.MyViewHolder {
+    ): MyViewHolder {
         return MyViewHolder(
-            IngredientsRowLayoutBinding.inflate(LayoutInflater.from(parent.context),parent, false))
+            IngredientsRowLayoutBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        )
     }
 
     // We concatenate to the url the corresponding ingredient image name
-    override fun onBindViewHolder(holder: IngredientsAdapter.MyViewHolder, position: Int) {
-        holder.binding.ingredientImageView.load(BASE_IMAGE_URL + ingredientsList[position].image){
+    override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
+        holder.binding.ingredientImageView.load(BASE_IMAGE_URL + ingredientsList[position].image) {
             crossfade(600)
             error(R.drawable.ic_error_placeholder)
         }

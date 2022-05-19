@@ -15,7 +15,7 @@ import com.example.foodexc.models.Result
 class InstructionsFragment : Fragment() {
 
     private var _binding: FragmentInstructionsBinding? = null
-    private val binding get()= _binding!!
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -40,7 +40,7 @@ class InstructionsFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding=null
+        _binding = null
     }
 
 }

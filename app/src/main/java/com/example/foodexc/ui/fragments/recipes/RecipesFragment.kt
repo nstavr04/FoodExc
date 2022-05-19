@@ -63,7 +63,7 @@ class RecipesFragment : Fragment() {
         return binding.root
     }
 
-    private fun setupRecyclerView(){
+    private fun setupRecyclerView() {
         binding.recyclerview.adapter = mAdapter
         binding.recyclerview.layoutManager = LinearLayoutManager(requireContext())
         showShimmerEffect()
@@ -72,12 +72,12 @@ class RecipesFragment : Fragment() {
     // read from database if its not empty otherwise we will call our requestapidata function
     private fun readDatabase() {
         lifecycleScope.launch {
-            mainViewModel.readRecipes.observeOnce(viewLifecycleOwner, {database ->
-                if (database.isNotEmpty() && !args.backFromBottomSheet){
+            mainViewModel.readRecipes.observeOnce(viewLifecycleOwner, { database ->
+                if (database.isNotEmpty() && !args.backFromBottomSheet) {
                     // Log.d("RecipesFragment", "readDatabase called!")
                     mAdapter.setData(database[0].foodRecipe)
                     hideShimmerEffect()
-                } else{
+                } else {
                     requestApiData()
                 }
             })
@@ -85,7 +85,7 @@ class RecipesFragment : Fragment() {
     }
 
     // toast is the popup message
-    private fun requestApiData(){
+    private fun requestApiData() {
         // Log.d("RecipesFragment", "requestApiData called!")
         mainViewModel.getRecipes(recipesViewModel.applyQueries())
         mainViewModel.recipesResponse.observe(viewLifecycleOwner, { response ->
@@ -111,22 +111,22 @@ class RecipesFragment : Fragment() {
         )
     }
 
-    private fun loadDataFromCache(){
+    private fun loadDataFromCache() {
         lifecycleScope.launch {
             mainViewModel.readRecipes.observe(viewLifecycleOwner, { database ->
-                if(database.isNotEmpty()){
+                if (database.isNotEmpty()) {
                     mAdapter.setData(database[0].foodRecipe)
                 }
             })
         }
     }
 
-    private fun showShimmerEffect(){
+    private fun showShimmerEffect() {
         binding.shimmerFrameLayout.startShimmer()
         binding.recyclerview.visibility = View.GONE
     }
 
-    private fun hideShimmerEffect(){
+    private fun hideShimmerEffect() {
         binding.shimmerFrameLayout.stopShimmer()
         binding.shimmerFrameLayout.visibility = View.GONE
         binding.recyclerview.visibility = View.VISIBLE

@@ -18,14 +18,14 @@ class IngredientsFragment : Fragment() {
 
 
     private var _binding: FragmentIngredientsBinding? = null
-    private val binding get()=_binding!!
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         // Inflate the layout for this fragment
-        _binding=FragmentIngredientsBinding.inflate(inflater, container, false)
+        _binding = FragmentIngredientsBinding.inflate(inflater, container, false)
 
         val args = arguments
         val myBundle: Result? = args?.getParcelable(RECIPE_RESULT_KEY)
@@ -36,14 +36,14 @@ class IngredientsFragment : Fragment() {
         return binding.root
     }
 
-    private fun setupRecyclerView(){
+    private fun setupRecyclerView() {
         binding.ingredientsRecyclerview.adapter = mAdapter
         binding.ingredientsRecyclerview.layoutManager = LinearLayoutManager(requireContext())
     }
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding=null
+        _binding = null
     }
 
 }

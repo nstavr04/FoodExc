@@ -61,7 +61,8 @@ class DataStoreRepository @Inject constructor(@ApplicationContext private val co
         .map { preferences ->
             val selectedMealType = preferences[PreferenceKeys.selectedMealType] ?: DEFAULT_MEAL_TYPE
             val selectedMealTypeId = preferences[PreferenceKeys.selectedMealTypeId] ?: 0
-            val selectedCuisineType = preferences[PreferenceKeys.selectedCuisineType] ?: DEFAULT_CUISINE_TYPE
+            val selectedCuisineType =
+                preferences[PreferenceKeys.selectedCuisineType] ?: DEFAULT_CUISINE_TYPE
             val selectedCuisineTypeId = preferences[PreferenceKeys.selectedCuisineTypeId] ?: 0
             MealAndCuisineType(
                 selectedMealType,

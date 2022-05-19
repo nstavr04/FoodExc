@@ -20,7 +20,7 @@ import java.util.*
 class RecipesBottomSheet : BottomSheetDialogFragment() {
 
     private var _binding: RecipesBottomSheetBinding? = null
-    private val binding get()= _binding!!
+    private val binding get() = _binding!!
 
 
     private lateinit var recipesViewModel: RecipesViewModel
@@ -63,7 +63,7 @@ class RecipesBottomSheet : BottomSheetDialogFragment() {
             cuisineTypeChipId = selectedChipId
         }
 
-       binding.applyBtn.setOnClickListener {
+        binding.applyBtn.setOnClickListener {
             recipesViewModel.saveMealAndCuisineType(
                 mealTypeChip,
                 mealTypeChipId,
@@ -80,14 +80,14 @@ class RecipesBottomSheet : BottomSheetDialogFragment() {
         return binding.root
     }
 
-    private fun updateChip(chipId: Int, chipGroup: ChipGroup){
+    private fun updateChip(chipId: Int, chipGroup: ChipGroup) {
         // If we have made some selections before
-        if(chipId != 0) {
+        if (chipId != 0) {
             try {
                 val targetView = chipGroup.findViewById<Chip>(chipId)
                 targetView.isChecked = true
                 chipGroup.requestChildFocus(targetView, targetView)
-            } catch (e: Exception){
+            } catch (e: Exception) {
                 Log.d("RecipesBottomSheet", e.message.toString())
             }
         }

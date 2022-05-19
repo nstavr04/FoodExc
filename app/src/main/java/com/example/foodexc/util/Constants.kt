@@ -35,7 +35,6 @@ class Constants {
         const val PREFERENCES_CUISINE_TYPE_ID = "cuisineTypeId"
 
 
-
     }
 
 }

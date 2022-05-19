@@ -7,8 +7,4 @@ import dagger.hilt.android.HiltAndroidApp
 
 //Triggers hilt code generation
 @HiltAndroidApp
-class MyApplication : Application() {
-
-
-
-}
+class MyApplication : Application() {}

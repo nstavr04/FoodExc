@@ -26,8 +26,6 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
 
-        // Switching to our app theme after the splash screen
-        //setTheme(R.style.AppTheme)
         setContentView(binding.root)
 
         navController = findNavController(R.id.navHostFragment)

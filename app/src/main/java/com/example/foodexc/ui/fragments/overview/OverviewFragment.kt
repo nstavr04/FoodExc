@@ -21,7 +21,7 @@ import org.jsoup.Jsoup
 class OverviewFragment : Fragment() {
 
     private var _binding: FragmentOverviewBinding? = null
-    private val binding get()= _binding!!
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -50,8 +50,8 @@ class OverviewFragment : Fragment() {
         return binding.root
     }
 
-    private fun updateColors(stateIsOn: Boolean?, textView: TextView, imageView: ImageView){
-        if(stateIsOn == true){
+    private fun updateColors(stateIsOn: Boolean?, textView: TextView, imageView: ImageView) {
+        if (stateIsOn == true) {
             imageView.setColorFilter(ContextCompat.getColor(requireContext(), R.color.green))
             textView.setTextColor(ContextCompat.getColor(requireContext(), R.color.green))
         }
@@ -59,7 +59,7 @@ class OverviewFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
-        _binding=null
+        _binding = null
     }
 
 }

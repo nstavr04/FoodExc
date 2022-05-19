@@ -16,26 +16,25 @@ class RecipesAdapter : RecyclerView.Adapter<RecipesAdapter.MyViewHolder>() {
     class MyViewHolder(private val binding: RecipesRowLayoutBinding) :
         RecyclerView.ViewHolder(binding.root) {
 
-            fun bind(result: Result){
-                binding.result = result
-                binding.executePendingBindings()
-            }
+        fun bind(result: Result) {
+            binding.result = result
+            binding.executePendingBindings()
+        }
 
-            // Can call it from elsewhere
-            companion object {
-                fun from(parent: ViewGroup): MyViewHolder {
-                    val layoutInflater = LayoutInflater.from(parent.context)
-                    val binding = RecipesRowLayoutBinding.inflate(layoutInflater, parent, false)
-                    return MyViewHolder(binding)
-                }
+        // Can call it from elsewhere
+        companion object {
+            fun from(parent: ViewGroup): MyViewHolder {
+                val layoutInflater = LayoutInflater.from(parent.context)
+                val binding = RecipesRowLayoutBinding.inflate(layoutInflater, parent, false)
+                return MyViewHolder(binding)
             }
+        }
 
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         return MyViewHolder.from(parent)
     }
-
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         // Store current item from our recycler view
@@ -48,7 +47,7 @@ class RecipesAdapter : RecyclerView.Adapter<RecipesAdapter.MyViewHolder>() {
     }
 
     // Every time there is a new data we want to store it to the recipe
-    fun setData(newData: FoodRecipe){
+    fun setData(newData: FoodRecipe) {
 
         val recipesDiffUtil = RecipesDiffUtil(recipes, newData.results)
         val diffUtilResult = DiffUtil.calculateDiff(recipesDiffUtil)
@@ -56,11 +55,5 @@ class RecipesAdapter : RecyclerView.Adapter<RecipesAdapter.MyViewHolder>() {
         recipes = newData.results
 
         diffUtilResult.dispatchUpdatesTo(this)
-
-        // Overkill, we will use DiffUtil to update only the ones that are new data
-        // notifyDataSetChanged()
-
     }
-
-
 }

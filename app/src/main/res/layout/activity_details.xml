@@ -23,10 +23,10 @@
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tabLayout"
             style="@style/customTabLayoutStyle"
-            app:tabTextAppearance="@style/CustomTabTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:layout_scrollFlags="scroll" />
+            app:layout_scrollFlags="scroll"
+            app:tabTextAppearance="@style/CustomTabTextStyle" />
 
     </com.google.android.material.appbar.AppBarLayout>
 

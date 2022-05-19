@@ -1,6 +1,5 @@
 <resources>
     <string name="app_name">FoodExc</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="recipes_fragment">Recipes</string>
     <string name="favourite_recipes_fragment">Favorites</string>
     <string name="meal_type">Meal Type</string>

@@ -49,18 +49,18 @@ class DetailsActivity : AppCompatActivity() {
             this
         )
 
-        binding.viewPager2.apply{
+        binding.viewPager2.apply {
             adapter = pagerAdapter
         }
-         TabLayoutMediator(binding.tabLayout, binding.viewPager2){ tab, position ->
-             tab.text = titles[position]
-         }.attach()
+        TabLayoutMediator(binding.tabLayout, binding.viewPager2) { tab, position ->
+            tab.text = titles[position]
+        }.attach()
 
     }
 
     // Close our details activity
     override fun onOptionsItemSelected(item: MenuItem): Boolean {
-        if(item.itemId == android.R.id.home){
+        if (item.itemId == android.R.id.home) {
             finish()
         }
         return super.onOptionsItemSelected(item)
