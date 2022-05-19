@@ -12,7 +12,6 @@ import com.example.foodexc.util.Constants.Companion.PREFERENCES_MEAL_TYPE
 import com.example.foodexc.util.Constants.Companion.PREFERENCES_MEAL_TYPE_ID
 import com.example.foodexc.util.Constants.Companion.PREFERENCES_NAME
 import dagger.hilt.android.qualifiers.ApplicationContext
-import dagger.hilt.android.scopes.ActivityRetainedScoped
 import dagger.hilt.android.scopes.ViewModelScoped
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.catch

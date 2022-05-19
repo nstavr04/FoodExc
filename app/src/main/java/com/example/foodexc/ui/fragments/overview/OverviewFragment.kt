@@ -11,12 +11,9 @@ import androidx.core.content.ContextCompat
 import coil.load
 import com.example.foodexc.R
 import com.example.foodexc.bindingadapters.RecipesRowBinding
-import com.example.foodexc.databinding.FragmentInstructionsBinding
 import com.example.foodexc.databinding.FragmentOverviewBinding
 import com.example.foodexc.models.Result
 import com.example.foodexc.util.Constants.Companion.RECIPE_RESULT_KEY
-import org.jsoup.Jsoup
-
 
 class OverviewFragment : Fragment() {
 

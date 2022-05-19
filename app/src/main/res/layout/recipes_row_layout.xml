@@ -47,7 +47,8 @@
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    tools:srcCompat="@tools:sample/avatars" />
+                    tools:srcCompat="@tools:sample/avatars"
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     android:id="@+id/title_textView"
@@ -92,7 +93,8 @@
                     app:layout_constraintStart_toStartOf="@+id/like_textView"
                     app:layout_constraintTop_toBottomOf="@+id/description_textView"
                     app:srcCompat="@drawable/ic_like_recipe_row"
-                    app:tint="@color/blue" />
+                    app:tint="@color/blue"
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     android:id="@+id/like_textView"
@@ -112,7 +114,8 @@
                     app:layout_constraintStart_toStartOf="@+id/clock_textView"
                     app:layout_constraintTop_toTopOf="@+id/like_imageView"
                     app:srcCompat="@drawable/ic_time_recipe_row"
-                    app:tint="@color/yellow" />
+                    app:tint="@color/yellow"
+                    tools:ignore="ContentDescription" />
 
                 <TextView
                     android:id="@+id/clock_textView"
@@ -131,7 +134,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="24dp"
-                    android:text="Costly"
+                    android:text="@string/costly"
                     android:textAlignment="center"
                     app:layout_constraintStart_toEndOf="@+id/clock_textView"
                     app:layout_constraintTop_toBottomOf="@+id/expensive_ImageView" />
@@ -144,7 +147,8 @@
                     app:layout_constraintEnd_toEndOf="@+id/expensive_textView"
                     app:layout_constraintStart_toStartOf="@+id/expensive_textView"
                     app:layout_constraintTop_toTopOf="@+id/clock_imageView"
-                    app:srcCompat="@drawable/ic_expensive_recipe_row" />
+                    app:srcCompat="@drawable/ic_expensive_recipe_row"
+                    tools:ignore="ContentDescription" />
 
             </androidx.constraintlayout.widget.ConstraintLayout>
 

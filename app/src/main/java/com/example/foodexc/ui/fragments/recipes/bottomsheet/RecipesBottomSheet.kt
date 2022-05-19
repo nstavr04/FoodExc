@@ -31,7 +31,7 @@ class RecipesBottomSheet : BottomSheetDialogFragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        recipesViewModel = ViewModelProvider(requireActivity()).get(RecipesViewModel::class.java)
+        recipesViewModel = ViewModelProvider(requireActivity())[RecipesViewModel::class.java]
     }
 
     override fun onCreateView(
@@ -41,24 +41,24 @@ class RecipesBottomSheet : BottomSheetDialogFragment() {
         // Inflate the layout for this fragment
         _binding = RecipesBottomSheetBinding.inflate(inflater, container, false)
 
-        recipesViewModel.readMealAndCuisineType.asLiveData().observe(viewLifecycleOwner, { value ->
+        recipesViewModel.readMealAndCuisineType.asLiveData().observe(viewLifecycleOwner) { value ->
             mealTypeChip = value.selectedMealType
             cuisineTypeChip = value.selectedCuisineType
             updateChip(value.selectedMealTypeId, binding.mealTypeChipGroup)
             updateChip(value.selectedCuisineTypeId, binding.cuisineTypeChipGroup)
-        })
+        }
 
         // Whenever we selected a chip from out filter we will store their text and ids
         binding.mealTypeChipGroup.setOnCheckedChangeListener { group, selectedChipId ->
             val chip = group.findViewById<Chip>(selectedChipId)
-            val selectedMealType = chip.text.toString().toLowerCase(Locale.ROOT)
+            val selectedMealType = chip.text.toString().lowercase(Locale.ROOT)
             mealTypeChip = selectedMealType
             mealTypeChipId = selectedChipId
         }
 
         binding.cuisineTypeChipGroup.setOnCheckedChangeListener { group, selectedChipId ->
             val chip = group.findViewById<Chip>(selectedChipId)
-            val selectedCuisineType = chip.text.toString().toLowerCase(Locale.ROOT)
+            val selectedCuisineType = chip.text.toString().lowercase(Locale.ROOT)
             cuisineTypeChip = selectedCuisineType
             cuisineTypeChipId = selectedChipId
         }

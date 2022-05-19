@@ -1,7 +1,6 @@
 package com.example.foodexc.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
@@ -11,6 +10,7 @@ import com.example.foodexc.databinding.IngredientsRowLayoutBinding
 import com.example.foodexc.models.ExtendedIngredient
 import com.example.foodexc.util.Constants.Companion.BASE_IMAGE_URL
 import com.example.foodexc.util.RecipesDiffUtil
+import java.util.*
 
 class IngredientsAdapter : RecyclerView.Adapter<IngredientsAdapter.MyViewHolder>() {
 
@@ -34,7 +34,11 @@ class IngredientsAdapter : RecyclerView.Adapter<IngredientsAdapter.MyViewHolder>
             crossfade(600)
             error(R.drawable.ic_error_placeholder)
         }
-        holder.binding.ingredientName.text = ingredientsList[position].name?.capitalize()
+        holder.binding.ingredientName.text = ingredientsList[position].name?.replaceFirstChar {
+            if (it.isLowerCase()) it.titlecase(
+                Locale.ROOT
+            ) else it.toString()
+        }
         holder.binding.ingredientAmount.text = ingredientsList[position].amount.toString()
         holder.binding.ingredientUnit.text = ingredientsList[position].unit
         holder.binding.ingredientConsistency.text = ingredientsList[position].consistency

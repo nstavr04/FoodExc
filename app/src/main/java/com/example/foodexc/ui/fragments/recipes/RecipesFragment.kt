@@ -1,14 +1,12 @@
 package com.example.foodexc.ui.fragments.recipes
 
 import android.os.Bundle
-import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModel
+import androidx.core.view.isVisible
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.fragment.findNavController
@@ -18,7 +16,6 @@ import com.example.foodexc.viewmodels.MainViewModel
 import com.example.foodexc.R
 import com.example.foodexc.adapters.RecipesAdapter
 import com.example.foodexc.databinding.FragmentRecipesBinding
-import com.example.foodexc.util.Constants.Companion.API_KEY
 import com.example.foodexc.util.NetworkResult
 import com.example.foodexc.util.observeOnce
 
@@ -40,8 +37,8 @@ class RecipesFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mainViewModel = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
-        recipesViewModel = ViewModelProvider(requireActivity()).get(RecipesViewModel::class.java)
+        mainViewModel = ViewModelProvider(requireActivity())[MainViewModel::class.java]
+        recipesViewModel = ViewModelProvider(requireActivity())[RecipesViewModel::class.java]
     }
 
     override fun onCreateView(
@@ -72,7 +69,7 @@ class RecipesFragment : Fragment() {
     // read from database if its not empty otherwise we will call our requestapidata function
     private fun readDatabase() {
         lifecycleScope.launch {
-            mainViewModel.readRecipes.observeOnce(viewLifecycleOwner, { database ->
+            mainViewModel.readRecipes.observeOnce(viewLifecycleOwner) { database ->
                 if (database.isNotEmpty() && !args.backFromBottomSheet) {
                     // Log.d("RecipesFragment", "readDatabase called!")
                     mAdapter.setData(database[0].foodRecipe)
@@ -80,7 +77,7 @@ class RecipesFragment : Fragment() {
                 } else {
                     requestApiData()
                 }
-            })
+            }
         }
     }
 
@@ -88,7 +85,8 @@ class RecipesFragment : Fragment() {
     private fun requestApiData() {
         // Log.d("RecipesFragment", "requestApiData called!")
         mainViewModel.getRecipes(recipesViewModel.applyQueries())
-        mainViewModel.recipesResponse.observe(viewLifecycleOwner, { response ->
+        mainViewModel.recipesResponse.observe(viewLifecycleOwner
+        ) { response ->
             when (response) {
                 is NetworkResult.Success -> {
                     hideShimmerEffect()
@@ -108,28 +106,27 @@ class RecipesFragment : Fragment() {
                 }
             }
         }
-        )
     }
 
     private fun loadDataFromCache() {
         lifecycleScope.launch {
-            mainViewModel.readRecipes.observe(viewLifecycleOwner, { database ->
+            mainViewModel.readRecipes.observe(viewLifecycleOwner) { database ->
                 if (database.isNotEmpty()) {
                     mAdapter.setData(database[0].foodRecipe)
                 }
-            })
+            }
         }
     }
 
     private fun showShimmerEffect() {
         binding.shimmerFrameLayout.startShimmer()
-        binding.recyclerview.visibility = View.GONE
+        binding.recyclerview.isVisible = false
     }
 
     private fun hideShimmerEffect() {
         binding.shimmerFrameLayout.stopShimmer()
-        binding.shimmerFrameLayout.visibility = View.GONE
-        binding.recyclerview.visibility = View.VISIBLE
+        binding.shimmerFrameLayout.isVisible = false
+        binding.recyclerview.isVisible = true
     }
 
     // Avoid memory leaks

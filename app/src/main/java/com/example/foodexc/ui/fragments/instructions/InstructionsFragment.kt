@@ -6,8 +6,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.webkit.WebViewClient
-import com.example.foodexc.R
-import com.example.foodexc.databinding.FragmentIngredientsBinding
 import com.example.foodexc.databinding.FragmentInstructionsBinding
 import com.example.foodexc.util.Constants.Companion.RECIPE_RESULT_KEY
 import com.example.foodexc.models.Result
