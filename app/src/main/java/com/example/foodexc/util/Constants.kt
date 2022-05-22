@@ -25,7 +25,11 @@ class Constants {
         const val RECIPES_TABLE = "recipes_table"
 
         // Bottom Sheet and Preferences
+
+        // Can change the number if you want the api to display more results at a time.
+        // The Spoonacular API only allows us 150 calls/day that's why we keep it a low number
         const val DEFAULT_RECIPES_NUMBER = "5"
+
         const val DEFAULT_MEAL_TYPE = "main course"
         const val DEFAULT_CUISINE_TYPE = "greek"
 
